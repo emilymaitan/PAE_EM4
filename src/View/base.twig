@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<meta name="author" content="emilymaitan" />
+	<meta name="description" content="Crowd Funding Mashup | PAE EM4 Web Frontend" />
+	<meta name="keywords" content="Crowd Funding Mashup, Kickstarter, Indiegogo, PAE, EM4" />
+	<meta name="robots" content="noindex, nofollow" />
+
+	<link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css" />
+	<script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+
+	<title>{% if pagetitle %}{{ pagetitle }} &mdash; {% endif %} PAE EM4</title>
+
+</head>
+
+<body class="light">
+{% block body %}
+	<div class="container main">
+		<main role="main">
+			{% block content %}
+			{% endblock %}
+		</main>
+	</div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+    "name": "emilymaitan/PAE_EM4",
+    "type": "project",
+    "license": "custom",
+    "authors": [
+      {
+        "name" : "Mai",
+        "homepage" : "https://github.com/emilymaitan",
+        "role": "developer"
+      }
+    ],
+    "require": {
+        "twig/twig": "~1.0",
+        "nikic/fast-route": "^1.0",
+        "rdlowrey/auryn": "^1.4",
+        "guzzlehttp/guzzle": "^6.2",
+        "guzzlehttp/psr7": "^1.3"
+    },
+	"autoload": {
+		"psr-4": {
+			"emilymaitan\\PAE_EM4\\": "./src"
+		}
+	}
+}
