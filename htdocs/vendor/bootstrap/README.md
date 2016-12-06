@@ -1,18 +1,18 @@
-# [Bootstrap](../../index.phptrap.com)
+# [Bootstrap](../../index.phprap.com)
 
-[![Slack](../../index.phpp-slack.herokuapp.com/badge.svg)](../../index.phpp-slack.herokuapp.com)
-![Bower version](../../index.phplds.io/bower/v/bootstrap.svg)
-[![npm version](../../index.phplds.io/npm/v/bootstrap.svg)](../../index.phps.com/package/bootstrap)
-[![Gem version](../../index.phplds.io/gem/v/bootstrap.svg)](../../index.php.org/gems/bootstrap)
-[![Build Status](../../index.phplds.io/travis/twbs/bootstrap/master.svg)](../../index.phpi.org/twbs/bootstrap)
-[![devDependency Status](../../index.phplds.io/david/dev/twbs/bootstrap.svg)](../../index.php.org/twbs/bootstrap?type=dev)
-[![Meteor Atmosphere](../../index.phplds.io/badge/meteor-twbs%3Abootstrap-blue.svg)](../../index.phprejs.com/twbs/bootstrap)
-[![Packagist Prerelease](../../index.phplds.io/packagist/vpre/twbs/bootstrap.svg)](../../index.phpt.org/packages/twbs/bootstrap)
-[![NuGet](../../index.phplds.io/nuget/vpre/bootstrap.svg)](../../index.phpt.org/packages/bootstrap/4.0.0-alpha5)
+[![Slack](../../index.php-slack.herokuapp.com/badge.svg)](../../index.php-slack.herokuapp.com)
+![Bower version](../../index.phpds.io/bower/v/bootstrap.svg)
+[![npm version](../../index.phpds.io/npm/v/bootstrap.svg)](../../index.php.com/package/bootstrap)
+[![Gem version](../../index.phpds.io/gem/v/bootstrap.svg)](../../index.phporg/gems/bootstrap)
+[![Build Status](../../index.phpds.io/travis/twbs/bootstrap/master.svg)](../../index.php.org/twbs/bootstrap)
+[![devDependency Status](../../index.phpds.io/david/dev/twbs/bootstrap.svg)](../../index.phporg/twbs/bootstrap?type=dev)
+[![Meteor Atmosphere](../../index.phpds.io/badge/meteor-twbs%3Abootstrap-blue.svg)](../../index.phpejs.com/twbs/bootstrap)
+[![Packagist Prerelease](../../index.phpds.io/packagist/vpre/twbs/bootstrap.svg)](../../index.php.org/packages/twbs/bootstrap)
+[![NuGet](../../index.phpds.io/nuget/vpre/bootstrap.svg)](../../index.php.org/packages/bootstrap/4.0.0-alpha5)
 
-[![Selenium Test Status](../../index.phps.com/browser-matrix/bootstrap.svg)](../../index.phps.com/u/bootstrap)
+[![Selenium Test Status](../../index.php.com/browser-matrix/bootstrap.svg)](../../index.php.com/u/bootstrap)
 
-Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development, created by [Mark Otto](../../index.phpcom/mdo) and [Jacob Thornton](../../index.phpcom/fat), and maintained by the [core team](../../index.phpom/orgs/twbs/people) with the massive support and involvement of the community.
+Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development, created by [Mark Otto](../../index.phpom/mdo) and [Jacob Thornton](../../index.phpom/fat), and maintained by the [core team](../../index.phpm/orgs/twbs/people) with the massive support and involvement of the community.
 
 To get started, check out <https://getbootstrap.com>!
 
