@@ -27,7 +27,7 @@ development and reflect what feature or bug I'm currently working on.
 Branches with fix_ will be deleted as soon as I'm done debugging.
 
 ## Usage
-Before this project can be used, the dependencies need to be downloaded through Composer. 
+Before this project can be used, the dependencies need to be downloaded through Composer. <br>
 1. Download composer [here](https://getcomposer.org/download/) if you have not yet done so,
 either locally or globally. A smart IDE (like PhpStorm, which I use) may perform this step for you.
 2. Execute "install".
