@@ -27,12 +27,15 @@ development and reflect what feature or bug I'm currently working on.
 Branches with fix_ will be deleted as soon as I'm done debugging.
 
 ## Usage
-Before this project can be used, the dependencies need to be downloaded through Composer. <br>
+Before this project can be used, the dependencies need to be downloaded through Composer.
+
 1. Download composer [here](https://getcomposer.org/download/) if you have not yet done so,
 either locally or globally. A smart IDE (like PhpStorm, which I use) may perform this step for you.
+
 2. Execute "install".
     * local install with the phar-file: `php path/to/composer.phar install`
     * global install: `composer install`
+    
 3. Sit back and watch the magic! :sparkles:
 
 It is recommended to run this project under PHP 7.1. To host a local test-server, 
