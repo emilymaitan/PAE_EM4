@@ -26,7 +26,7 @@ and [PSR 7](http://www.php-fig.org/psr/psr-7/).
     - security basics (I'm looking at you, SQL injection!)
         - On that note, remember not to push sensible data.
     
-Also, make sure you have a grip on the basics from this page: 
-[![PHP the Right Way](http://www.phptherightway.com/images/banners/lg-rect-386x280.png "Learn PHP the Right Way!")](http://www.phptherightway.com).
+Also, make sure you have a grip on the basics from this page: <br />
+[![PHP the Right Way](http://www.phptherightway.com/images/banners/med-rect-300x250.png "Learn PHP the Right Way!")](http://www.phptherightway.com).
 
 Thanks for reading! :blue_heart:
