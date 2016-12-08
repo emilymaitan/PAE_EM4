@@ -28,9 +28,12 @@ Branches with fix_ will be deleted as soon as I'm done debugging.
 
 ## Usage
 Before this project can be used, the dependencies need to be downloaded through Composer. 
-To do this, download Composer if you have not yet done so, initialize it and execute dump-autoload. <br>
-(Should this fail for any reason, check out the dependencies in the file composer.json and download
-them manually. I'd recommend using a folder called "vendor", placed in the project root.)
+1. Download composer [here](https://getcomposer.org/download/) if you have not yet done so,
+either locally or globally. A smart IDE (like PhpStorm, which I use) may perform this step for you.
+2. Execute "install".
+    * local install with the phar-file: `php path/to/composer.phar install`
+    * global install: `composer install`
+3. Sit back and watch the magic! :sparkles:
 
 It is recommended to run this project under PHP 7.1. To host a local test-server, 
 open your shell of choice in the project root and type: <br />
@@ -46,3 +49,6 @@ All dependencies for this project are managed by [Composer](https://getcomposer.
 - [Guzzle HTTP](http://guzzlephp.org/)
 - [FastRoute](https://github.com/nikic/FastRoute)
 - [Twig](http://twig.sensiolabs.org/)
+
+This project aims to follow the [PSR 4](http://www.php-fig.org/psr/psr-4/) 
+and [PSR 7](http://www.php-fig.org/psr/psr-7/) standards.
