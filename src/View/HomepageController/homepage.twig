@@ -1,5 +1,61 @@
 {% extends "base.twig" %}
 
 {% block content %}
-Homepage Status: {{ status }}
+    <div class="jumbotron">
+        <h1>Project Database Status</h1>
+        <p class="lead">Current status of our project API and underlying database.</p>
+        <hr>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th scope="row">Entries in Database</th>
+                    <td>{{ stats_db_entries }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Last Updated</th>
+                    <td>{{ stats_db_lastUpdated }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8">
+            <h1>New Today</h1>
+            <p>New projects from crowd funding platforms that were added today!</p>
+
+            {% if projects_today|length == 0 %}
+                <div class="alert alert-info" role="alert">
+                    <strong>Sorry!</strong> Seems like there are no new projects today. Come back another time!
+                </div>
+            {% else %}
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Description</th>
+                        <th>Novelty Index</th>
+                        <th>Popularity Index</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for project in projects_today %}
+                    <tr>
+                        <td>{{ project.getName() }}</td>
+                        <td>{{ project.getDescription() }}</td>
+                        <td>{{ project.getNoveltyIndex() }}</td>
+                        <td>{{ project.getPopularityIndex() }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            {% endif %}
+        </div>
+
+        <div class="col-lg-4">
+            <p>Placeholder paragraph.</p>
+        </div>
+    </div>
 {% endblock %}
