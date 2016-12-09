@@ -1,0 +1,17 @@
+{
+  "name": "emilymaitan_pae-em4",
+  "version": "0.1.0",
+  "author": "emilymaitan (https://github.com/emilymaitan)",
+  "description": "Web Frontend for the PAE (Application Development in Media Informatics) course.",
+  "keywords": ["emilymaitan","Crowd Funding Mashup", "Kickstarter", "Indiegogo", "PAE", "EM4"],
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emilymaitan/PAE_EM4"
+  },
+  "dependencies": {
+    "bootstrap" : "4.0.0-alpha.5",
+    "jquery" : "*",
+    "font-awesome": "4.7.0"
+  }
+}
