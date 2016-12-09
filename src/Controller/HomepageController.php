@@ -16,7 +16,9 @@ class HomepageController extends AbstractController {
 
         $projects_today = [];
         $project = new Project("Thing","You know you need it.",50,80);
+        $project2 = new Project("Cat Cookies", "Heaven is bacon-flavored.",60,45);
         $projects_today[0] = $project;
+        $projects_today[1] = $project2;
 
         return [
             'pagetitle' => "CFM | Homepage",
