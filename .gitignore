@@ -1,13 +1,15 @@
 # GITIGNORE
 
-# Composer-specific files
+# Composer local install
 composer.phar
+
+# vendor libraries installed by composer (not the ones in htdocs)
 vendor/*
 
 # next up, no project files -- note that a IDE-native project import will be
 # necessary to work with the project properly...
 
-# IntelliJ IDEA project files
+# Jetbrains PhpStorm project files
 *.iml
 *.iws
 .idea/
