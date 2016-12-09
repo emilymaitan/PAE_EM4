@@ -1,0 +1,15 @@
+body {
+    /* fixes "nav covers content" issue */
+    padding-top: 4rem;
+}
+
+/* dark input background for inverted forms */
+.form-control.form-dark {
+    background-color: rgba(255,255,255,0.1);
+    border-color: grey;
+}
+
+/* adjust border color to adjoining button */
+.form-control.form-dark.form-group-outline-btn-info {
+    border-color: #5bc0de;
+}
