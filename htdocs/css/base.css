@@ -1,6 +1,15 @@
+html, body, .container-fluid {
+    height: 100%;
+}
+
 body {
     /* fixes "nav covers content" issue */
     padding-top: 4rem;
+}
+
+body > .container-fluid {
+    height: auto;
+    min-height: calc(100% - 5rem);
 }
 
 /* dark input background for inverted forms */
@@ -17,8 +26,9 @@ body {
 }
 
 .footer {
-    /* footer fix: place it on the very bottom! (not absolute or relative!) */
-    position: fixed;
+    /* footer fix: place it on the very bottom!*/
+    position: relative;
+    clear: both;
     bottom: 0;
     /* move a distance from the above content */
     margin-top: 1em;
