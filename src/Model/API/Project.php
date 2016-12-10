@@ -34,10 +34,10 @@ class Project
 
     /**
      * Project constructor.
-     * @param $name string -- The full title of the project.
-     * @param $description -- A short text descibing the project.
-     * @param $noveltyIndex -- numeral value between 0 and 100 denoting the novelty of the project
-     * @param $popularityIndex -- numeral value between 0 and 100 denoting the popularity of the project
+     * @param string $name  -- The full title of the project.
+     * @param string $description -- A short text descibing the project.
+     * @param float $noveltyIndex -- numeral value between 0 and 100 denoting the novelty of the project
+     * @param float $popularityIndex -- numeral value between 0 and 100 denoting the popularity of the project
      */
     function __construct($name, $description, $noveltyIndex, $popularityIndex){
         $this->name = $name;
@@ -110,5 +110,14 @@ class Project
         $this->popularityIndex = $popularityIndex;
     }
 
-
+    /**
+     * @return string A string listing all class variables and their current values.
+     */
+    public function __toString()
+    {
+        return "Project Name: " . $this->name .
+            "\nDescription: " . $this->description .
+            "\nPopularity: " . $this->popularityIndex .
+            "\nNovelty: " . $this->noveltyIndex;
+    }
 }
