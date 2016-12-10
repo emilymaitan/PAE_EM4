@@ -17,8 +17,8 @@ body {
 }
 
 .footer {
-    /* footer fix: place it on the very bottom! (not absolute!) */
-    position: relative;
+    /* footer fix: place it on the very bottom! (not absolute or relative!) */
+    position: fixed;
     bottom: 0;
     /* move a distance from the above content */
     margin-top: 1em;
