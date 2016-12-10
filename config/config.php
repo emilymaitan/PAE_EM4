@@ -2,6 +2,7 @@
 
 use emilymaitan\PAE_EM4\Controller\ErrorController;
 use emilymaitan\PAE_EM4\Controller\HomepageController;
+use emilymaitan\PAE_EM4\Controller\ProjectController;
 use emilymaitan\PAE_EM4\Core\DatabaseMigrationProcessor;
 use emilymaitan\PAE_EM4\Core\Router;
 use emilymaitan\PAE_EM4\Model\Migration\SampleMigration;
@@ -50,7 +51,8 @@ return [
 				500 => [ErrorController::class, 'error'],
 			],
 			':routes' => [
-				['GET', '/', HomepageController::class, 'homepage']
+				['GET', '/', HomepageController::class, 'homepage'],
+                ['GET', '/project/{name}', ProjectController::class, 'project']
 			]
 		],
 		/**
