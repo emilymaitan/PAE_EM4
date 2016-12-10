@@ -22,7 +22,9 @@
 
 	<!-- Bootstrap core JS and jQuery (dependency) -->
 	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/tether.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.js"></script>
+    {% block customScript %} {% endblock %}
 
 	<title>{% if pagetitle %}{{ pagetitle }} &mdash; {% endif %} PAE EM4</title>
 
@@ -35,7 +37,7 @@
 	<!-- generic dark navbar -->
 	<nav role="navigation" class="navbar navbar-fixed-top navbar-dark bg-inverse">
 		<!-- company name brand -- ToDo: evtl. add image -->
-		<a class="navbar-brand" href="#">
+		<a class="navbar-brand" href="/">
 			Crowd Funding Mashup
 		</a>
 		<ul class="nav navbar-nav">

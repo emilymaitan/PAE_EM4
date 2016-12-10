@@ -22,7 +22,6 @@ class HomepageController extends AbstractController {
 
         return [
             'pagetitle' => "CFM | Homepage",
-            'status' => 'running',
             'stats_db_entries' => $stats_db_entries,
             'stats_db_lastUpdated' => $stats_db_lastUpdated->format('Y-m-d H:i:s'),
             'projects_today' => $projects_today

@@ -1,5 +1,15 @@
 {% extends "base.twig" %}
 
+{% block customStylesheet %}
+    <!-- jquery UI for displaying datepicker -->
+    <link rel="stylesheet" href="vendor/jquery-ui-custom/jquery-ui.css">
+{% endblock %}
+
+{% block customScript %}
+    <script src="vendor/jquery-ui-custom/jquery-ui.js"></script>
+    <script src="js/homepage.js"></script>
+{% endblock %}
+
 {% block content %}
     <div class="jumbotron">
         <h1>Project Database Status</h1>
@@ -55,7 +65,13 @@
         </div>
 
         <div class="col-lg-4">
-            <p>Placeholder paragraph.</p>
+            <p>Browse our project database by day...</p>
+            <!-- this whole datepicker stuff feels dirty -->
+            <div id="datepicker">
+                <form id="dateform" name="dateform" method="get" action="/projectsByDate">
+                    <input type="hidden" id="filterDate" value="">
+                </form>
+            </div>
         </div>
     </div>
 {% endblock %}
