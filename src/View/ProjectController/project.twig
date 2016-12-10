@@ -1,1 +1,43 @@
 {% extends "base.twig" %}
+
+{% block content %}
+    <div class="container">
+    <h1>{{ project.name }}</h1>
+    <div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="text-xs-center" id="noveltyCaption">
+                    Novelty Index: {{ project.noveltyIndex }}%
+                </div>
+                <progress class="progress progress-striped progress-info"
+                          value="{{ project.noveltyIndex }}" max="100"
+                          aria-describedby="noveltyCaption" aria-valuemin="0" aria-valuemax="100"
+                          aria-valuenow="{{ project.noveltyIndex }}">
+                </progress>
+            </div>
+            <div class="col-lg-6">
+                <div class="text-xs-center" id="popularityCaption">
+                    Popularity Index: {{ project.popularityIndex }}%
+                </div>
+                <progress class="progress progress-striped progress-success"
+                          value="{{ project.popularityIndex }}" max="100"
+                          aria-describedby="popularityCaption" aria-valuemin="0" aria-valuemax="100"
+                          aria-valuenow="{{ project.popularityIndex }}">
+                </progress>
+            </div>
+        </div>
+        <p><b>About this project.</b> {{ project.description }}</p>
+
+        <div class="card">
+            <div class="card-block">
+                <h5 class="card-title">Placeholder for a Graph!</h5>
+                <h6 class="card-subtitle text-muted">What is this about?</h6>
+            </div>
+            <div class="card-block">
+                GRAPH GOES HERE
+            </div>
+        </div>
+
+    </div>
+    </div> <!-- container -->
+{% endblock %}
