@@ -15,8 +15,8 @@ class HomepageController extends AbstractController {
         $stats_db_lastUpdated = new \DateTime();
 
         $projects_today = [];
-        $project = new Project(1,"Thing","You know you need it.",50,80,"2016-12-11","example.com/thing");
-        $project2 = new Project(2, "Cat Cookies", "Heaven is bacon-flavored.",60,45,"2016-12-11","example.coom/cat_cookies");
+        $project = new Project(1,"Thing","You know you need it.",50,80,"2016-12-11","http://example.com/thing");
+        $project2 = new Project(2, "Cat Cookies", "Heaven is bacon-flavored.",60,45,"2016-12-11","http://example.com/cat_cookies");
         $projects_today[0] = $project;
         $projects_today[1] = $project2;
 
