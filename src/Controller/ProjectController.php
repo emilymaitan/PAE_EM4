@@ -15,20 +15,20 @@ use emilymaitan\PAE_EM4\Model\API\Project;
  * Class ProjectController
  * @package emilymaitan\PAE_EM4\Controller
  */
-class ProjectController
-{
+class ProjectController extends AbstractController {
     /**
      * Gets infos for a specific project. URL pattern: /project/{name}
      * @return array All status variables for rendering the project detail page.
      */
-    public function project() {
+    public function project($name) {
         // ToDo parse the project name and ID (later) out of the GET-request
+
 
         // again, mock data for testing that will later be retrieved via the API
         $project = new Project("Thing","You know you need it.",50,80);
 
         return [
-            'pagetitle' => $project->getName(),
+            'pagetitle' => $name,
             'project' => $project
         ];
     }
