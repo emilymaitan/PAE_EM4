@@ -9,11 +9,11 @@ abstract class AbstractController {
 	/**
 	 * @var ServerRequestInterface
 	 */
-	protected $request;
+	private $request;
 	/**
 	 * @var HTTPResponseContainer
 	 */
-	protected $responseContainer;
+	private $responseContainer;
 
 	/**
 	 * @param ServerRequestInterface $request
@@ -23,4 +23,36 @@ abstract class AbstractController {
 		$this->request           = $request;
 		$this->responseContainer = $responseContainer;
 	}
+
+    /**
+     * @return ServerRequestInterface
+     */
+    public function getRequest(): ServerRequestInterface
+    {
+        return $this->request;
+    }
+
+    /**
+     * @param ServerRequestInterface $request
+     */
+    public function setRequest(ServerRequestInterface $request)
+    {
+        $this->request = $request;
+    }
+
+    /**
+     * @return HTTPResponseContainer
+     */
+    protected function getResponseContainer(): HTTPResponseContainer
+    {
+        return $this->responseContainer;
+    }
+
+    /**
+     * @param HTTPResponseContainer $responseContainer
+     */
+    protected function setResponseContainer(HTTPResponseContainer $responseContainer)
+    {
+        $this->responseContainer = $responseContainer;
+    }
 }
