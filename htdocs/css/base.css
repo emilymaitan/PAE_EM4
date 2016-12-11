@@ -39,3 +39,7 @@ body > .container-fluid {
     line-height: 60px;
     background-color: #f5f5f5;
 }
+
+tr.row-link:hover {
+    cursor: pointer;
+}
