@@ -4,6 +4,7 @@
     <div class="container">
     <h1>{{ project.name }}</h1>
     <div>
+        <!-- project indices -->
         <div class="row">
             <div class="col-lg-6">
                 <div class="text-xs-center" id="noveltyCaption">
@@ -25,7 +26,11 @@
                           aria-valuenow="{{ project.popularityIndex }}">
                 </progress>
             </div>
-        </div>
+        </div> <!-- end of project indices -->
+
+        <p>Follow "{{ project.name }}" here:
+            <a href="{{ project.link }}">{{ project.link }}</a>
+        </p>
         <p><b>About this project.</b> {{ project.description }}</p>
 
         <div class="card">

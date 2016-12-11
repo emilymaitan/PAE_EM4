@@ -26,7 +26,7 @@ class ProjectController extends AbstractController {
 
 
         // again, mock data for testing that will later be retrieved via the API
-        $project = new Project("Thing","You know you need it.",50,80);
+        $project = new Project(1,"Thing","You know you need it.",50,80,"2016-12-11","example.com/thing");
 
         return [
             'pagetitle' => $name,
