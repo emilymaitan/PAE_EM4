@@ -27,7 +27,7 @@ abstract class AbstractController {
     /**
      * @return ServerRequestInterface
      */
-    public function getRequest(): ServerRequestInterface
+    protected function getRequest(): ServerRequestInterface
     {
         return $this->request;
     }
@@ -35,7 +35,7 @@ abstract class AbstractController {
     /**
      * @param ServerRequestInterface $request
      */
-    public function setRequest(ServerRequestInterface $request)
+    protected function setRequest(ServerRequestInterface $request)
     {
         $this->request = $request;
     }
