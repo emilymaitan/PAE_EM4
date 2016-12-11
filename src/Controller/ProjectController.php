@@ -22,6 +22,7 @@ class ProjectController extends AbstractController {
      */
     public function project($name) {
         // ToDo parse the project name and ID (later) out of the GET-request
+        $name = urldecode(html_entity_decode(strip_tags($name))); // remove <tags> or html entities such as %20
 
 
         // again, mock data for testing that will later be retrieved via the API
