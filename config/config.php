@@ -52,7 +52,7 @@ return [
 			],
 			':routes' => [
 				['GET', '/', HomepageController::class, 'homepage'],
-                ['GET', '/project/{name:[a-zA-Z0-9_%20\-]+}', ProjectController::class, 'project']
+                ['GET', '/project/{year:[0-9]+}/{month:[0-9]+}/{day:[0-9]+}/{name:[a-zA-Z0-9_%20\-]+}__{id:[0-9]+}', ProjectController::class, 'project']
 			]
 		],
 		/**
