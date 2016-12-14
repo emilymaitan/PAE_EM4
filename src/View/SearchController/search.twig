@@ -1,0 +1,12 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="container">
+        Hello! Welcome at the search page! <br>
+        {% if query == null %}
+            Try to search for something!
+        {% else %}
+            You searched for: {{ query }}
+        {% endif %}
+    </div>
+{% endblock %}

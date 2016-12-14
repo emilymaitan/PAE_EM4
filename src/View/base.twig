@@ -47,14 +47,14 @@
 		</ul>
 
 		<!-- quick search function (placed on the right) -->
-		<form class="form-inline float-lg-right">
+		<form method="get" action="/search" class="form-inline float-lg-right">
 			<div class="input-group">
 				<span class="input-group-btn">
 					<button class="btn btn-outline-info" type="submit">
 						<i class="fa fa-search" aria-hidden="true"></i>
 					</button>
 				</span>
-				<input class="form-control form-dark form-group-outline-btn-info" type="text" placeholder="Search for project...">
+				<input type="search" name="query" placeholder="Search for project..." class="form-control form-dark form-group-outline-btn-info">
 			</div>
 			<button class="btn btn-outline-info" type="submit">Go!</button>
 		</form>

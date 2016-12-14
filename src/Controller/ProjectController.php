@@ -20,10 +20,8 @@ class ProjectController extends AbstractController {
      * Gets infos for a specific project. URL pattern: /project/{name}
      * @return array All status variables for rendering the project detail page.
      */
-    public function project($year, $month, $day, $name, $id) {
-        // ToDo parse the project name and ID (later) out of the GET-request
-        $name = urldecode(html_entity_decode(strip_tags($name))); // remove <tags> or html entities such as %20
-
+    public function project($id, $name) {
+        // ToDo perfom API lookup by $id
 
         // again, mock data for testing that will later be retrieved via the API
         $project = new Project(1,"Thing","You know you need it.",50,80,"2016/12/11","http://example.com/thing");
