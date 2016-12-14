@@ -6,6 +6,9 @@ composer.phar
 # vendor libraries installed by composer (not the ones in htdocs)
 vendor/*
 
+# my personal nginx sites-enabled, sites-available, php-fpm pool.d and other backups
+.serverBackup/
+
 # next up, no project files -- note that a IDE-native project import will be
 # necessary to work with the project properly...
 
