@@ -4,9 +4,10 @@
 
 $ (document).ready(function(){
     $("#datepicker").datepicker({
+        dateFormat: 'yy/mm/dd', // for REST-like URL redirection
+
         onSelect: function(dateText,inst) {
-            document.getElementById("filterDate").value = dateText;
-            document.getElementById("dateform").submit();
+            document.location = "/projects/" + dateText;
         }
     });
 

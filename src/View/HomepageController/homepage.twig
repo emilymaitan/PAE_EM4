@@ -67,12 +67,8 @@
 
         <div class="col-lg-4">
             <p>Browse our project database by day...</p>
-            <!-- this whole datepicker stuff feels dirty -->
-            <div id="datepicker">
-                <form id="dateform" name="dateform" method="get" action="/projectsByDate">
-                    <input type="hidden" id="filterDate" value="">
-                </form>
-            </div>
+            <!-- onClick redirects to /projects/yyyy/mm/dd -->
+            <div id="datepicker"></div>
         </div>
     </div>
 {% endblock %}
