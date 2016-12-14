@@ -7,8 +7,9 @@ This project is part of a larger University assignment. Its aim is it to provide
  
 ### ToDo
 - [x] put on github
-- [ ] Homepage
-- [ ] Project Page
+- [ ] Homepage _(milestone 1)_
+- [ ] Project Page _(milestone 2)_
+- [ ] API Integration _(milestone 3)_
 
 
 ### Branch Structure
@@ -38,7 +39,7 @@ either locally or globally. A smart IDE (like PhpStorm, which I use) may perform
     
 3. Sit back and watch the magic! :sparkles:
 
-It is recommended to run this project under PHP 7.1. To host a local test-server, 
+It is recommended to run this project under PHP 7. To host a local test-server, 
 open your shell of choice in the project root and type: <br />
     `cd htdocs` <br />
     `php -S 127.0.0.1:80` <br />
