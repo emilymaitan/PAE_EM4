@@ -39,7 +39,7 @@ either locally or globally. A smart IDE (like PhpStorm, which I use) may perform
     
 3. Sit back and watch the magic! :sparkles:
 
-It is recommended to run this project under PHP 7. To host a local test-server, 
+It is required to run this project using PHP 7 or above. To host a local test-server, 
 open your shell of choice in the project root and type: <br />
     `cd htdocs` <br />
     `php -S 127.0.0.1:80` <br />

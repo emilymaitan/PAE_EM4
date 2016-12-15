@@ -65,7 +65,7 @@ class Project
     /**
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -81,7 +81,7 @@ class Project
     /**
      * @return string
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -97,7 +97,7 @@ class Project
     /**
      * @return float
      */
-    public function getNoveltyIndex()
+    public function getNoveltyIndex(): float
     {
         return $this->noveltyIndex;
     }
@@ -113,7 +113,7 @@ class Project
     /**
      * @return float
      */
-    public function getPopularityIndex()
+    public function getPopularityIndex(): float
     {
         return $this->popularityIndex;
     }
@@ -177,7 +177,7 @@ class Project
     /**
      * @return string A string listing all class variables and their current values.
      */
-    public function __toString()
+    public function __toString(): string
     {
         return
             "ID #" . $this->id . ": \""  . $this->name . "\"" .
