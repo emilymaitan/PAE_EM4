@@ -37,12 +37,15 @@
 	<!-- generic dark navbar -->
 	<nav role="navigation" class="navbar navbar-fixed-top navbar-dark bg-inverse">
 		<!-- company name brand -- ToDo: evtl. add image -->
-		<a class="navbar-brand" href="/">
+		<a title="Homepage" class="navbar-brand" href="/">
 			Crowd Funding Mashup
 		</a>
 		<ul class="nav navbar-nav">
 			<li class="nav-item">
-				<a class="nav-link" href="#">Dummy Link</a>
+				<a title="Homepage - New Projects of the Day" class="nav-link" href="/#newtoday">New Today</a>
+			</li>
+			<li class="nav-item">
+				<a title="dummy" class="nav-link" href="#">Dummy Link</a>
 			</li>
 		</ul>
 
@@ -51,7 +54,7 @@
 			<div class="input-group">
 				<span class="input-group-btn">
 					<button class="btn btn-outline-info" type="submit">
-						<i class="fa fa-search" aria-hidden="true"></i>
+						<i title="Go!" class="fa fa-search" aria-hidden="false"></i>
 					</button>
 				</span>
 				<input type="search" name="query" placeholder="Search for project..." class="form-control form-dark form-group-outline-btn-info">
@@ -73,7 +76,9 @@
 	<footer class="footer">
 		<div class="container">
 			<span class="text-muted">
-				Made with <i class="fa fa-heart-o" aria-hidden="true" style="color: hotpink;"></i> by emilymaitan.
+				Made with <i title="love" class="fa fa-heart-o" aria-hidden="true" style="color: hotpink;">
+					<span class="sr-only">love</span>
+				</i> by emilymaitan.
 			</span>
 		</div>
 	</footer>

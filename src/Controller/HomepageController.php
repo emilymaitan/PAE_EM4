@@ -10,8 +10,8 @@ class HomepageController extends AbstractController {
      * @return array All status variables for rendering the homepage.
      */
     public function homepage() {
-        // test data you usually get via the API
-        $stats_db_entries = 123;
+        // mock-ups for data you usually get via the API
+        $stats_db_entries = 0;
         $stats_db_lastUpdated = new \DateTime();
 
         $projects_today = [];
@@ -22,6 +22,7 @@ class HomepageController extends AbstractController {
 
         return [
             'pagetitle' => "CFM | Homepage",
+            'stats_api_connected' => 'OFFLINE',
             'stats_db_entries' => $stats_db_entries,
             'stats_db_lastUpdated' => $stats_db_lastUpdated->format('Y-m-d H:i:s'),
             'projects_today' => $projects_today

@@ -12,11 +12,15 @@
 
 {% block content %}
     <div class="jumbotron">
-        <h1>Project Database Status</h1>
+        <h1 id="healthreport" >API and Database Status</h1>
         <p class="lead">Current status of our project API and underlying database.</p>
         <hr>
         <table class="table">
             <tbody>
+                <tr>
+                    <th scope="row">API Status</th>
+                    <td>{{ stats_api_connected }}</td>
+                </tr>
                 <tr>
                     <th scope="row">Entries in Database</th>
                     <td>{{ stats_db_entries }}</td>
@@ -30,8 +34,8 @@
     </div>
 
     <div class="row">
-        <div class="col-lg-8">
-            <h1>New Today</h1>
+        <div class="col-lg-9">
+            <h1 id="newtoday">New Today</h1>
             <p>New projects from crowd funding platforms that were added today!</p>
 
             {% if projects_today|length == 0 %}
@@ -65,7 +69,7 @@
             {% endif %}
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <p>Browse our project database by day...</p>
             <!-- onClick redirects to /projects/yyyy/mm/dd -->
             <div id="datepicker"></div>
