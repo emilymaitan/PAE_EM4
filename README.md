@@ -7,8 +7,8 @@ This project is part of a larger University assignment. Its aim is it to provide
  
 ### ToDo
 - [x] put on github
-- [ ] Homepage _(milestone 1)_
-- [ ] Project Page _(milestone 2)_
+- [x] Homepage _(milestone 1)_
+- [x] Project Page _(milestone 2)_
 - [ ] API Integration _(milestone 3)_
 
 
