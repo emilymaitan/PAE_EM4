@@ -20,5 +20,13 @@
 		"psr-4": {
 			"emilymaitan\\PAE_EM4\\": "./src"
 		}
-	}
+	},
+    "autoload-dev": {
+        "psr-4": {
+          "emilymaitan\\PAE_EM4\\": "./tests"
+        }
+    },
+    "require-dev": {
+      "phpunit/phpunit": "^5.7"
+    }
 }

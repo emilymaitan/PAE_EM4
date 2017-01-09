@@ -1,0 +1,11 @@
+[
+  {
+    "id": 0,
+    "name": "Unknown",
+    "description": "You're an URL-manipulator! ^^",
+    "noveltyIndex": 100,
+    "popularityIndex": 100,
+    "date": "2016/12/16",
+    "link": "http://example.com/nope"
+  }
+]

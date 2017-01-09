@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "name": "Thing",
+    "description": "You know you need it.",
+    "noveltyIndex": 50,
+    "popularityIndex": 80,
+    "date": "2016/12/11",
+    "link": "http://example.com/thing"
+  }
+]
