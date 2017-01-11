@@ -1,5 +1,9 @@
 <?php
 
+use emilymaitan\PAE_EM4\API\iApiConnector;
+use emilymaitan\PAE_EM4\API\iParser;
+use emilymaitan\PAE_EM4\API\JsonParser;
+use emilymaitan\PAE_EM4\API\MockApiConnector;
 use emilymaitan\PAE_EM4\Controller\ErrorController;
 use emilymaitan\PAE_EM4\Controller\HomepageController;
 use emilymaitan\PAE_EM4\Controller\ProjectController;
@@ -35,7 +39,8 @@ return [
 	 * ```
 	 */
 	'interfaceImplementations' => [
-
+	    iParser::class => JsonParser::class,
+        iApiConnector::class => MockApiConnector::class
 	],
 	/**
 	 * Provide the class constructor parameters here. Remember, these are named parameters only, if you need classes,

@@ -20,14 +20,16 @@ class SearchController extends AbstractController {
      */
     public function search() {
         $queryParams = $this->getRequest()->getQueryParams();
-        if ($queryParams == null) $query = null; // if site /search is called without any params
+        if ($queryParams == null) $query = ""; // if site /search is called without any params
         else $query = $queryParams["query"]; // no htmlspecialchar decode because < might be valid input
 
         // TODO api call to get $result
+        $projects = $this->getApiConnector()->getProjectByQuery($query);
 
         return [
             'pagetitle' => 'Advanced Search',
-            'query' => $query
+            'query' => $query,
+            'projects' => $projects
         ];
     }
 
