@@ -84,6 +84,14 @@ class MockApiConnector implements iApiConnector {
         return DateTime::createFromFormat('Y-m-d', $date)->format('Y/m/d');
     }
 
-    /* ************** GETTER (no setter - immutable!) ********************* */
-    // TODO add getter once final
+    /**
+     * Retrieves project(s) basing on a set of pre-defined parameters. Always empty because this is a mockup.
+     * @param array $params Allowed: name, date
+     * @throws /Exception invalid parameters
+     * @return array key is project-id, value is project
+     */
+    public function getProjectByParams(array $params): array
+    {
+        return array();
+    }
 }

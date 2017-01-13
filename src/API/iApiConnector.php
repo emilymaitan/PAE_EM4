@@ -32,4 +32,11 @@ interface iApiConnector {
      * @return array key is project-id, value is project
      */
     public function getProjectByDate (string $date) : array;
+
+    /**
+     * Retrieves project(s) basing on a set of pre-defined parameters.
+     * @param array $params Allowed: name, date
+     * @return array key is project-id, value is project
+     */
+    public function getProjectByParams (array $params) : array;
 }
