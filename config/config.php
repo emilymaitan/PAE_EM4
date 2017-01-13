@@ -60,13 +60,11 @@ return [
 				['GET', '/', HomepageController::class, 'homepage'],
                 ['GET', '/project/{id:[0-9]+}/{name:[a-zA-Z0-9_%20\-]+}', ProjectController::class, 'project'],
                 ['GET', '/search', SearchController::class, 'search'],
-                ['GET', '/search/advanced', SearchController::class, 'advancedSearch']
-                /*
-                ['GET', '/projects', SearchController::class, 'getByDate'],
+                ['GET', '/search/advanced', SearchController::class, 'advancedSearch'],
+                ['GET', '/projects', SearchController::class, 'searchByDate'],
                 ['GET', '/projects/{year:[0-9]+}', SearchController::class, 'searchByYear'],
                 ['GET', '/projects/{year:[0-9]+}/{month:[0-9]+}', SearchController::class, 'searchByMonth'],
                 ['GET', '/projects/{year:[0-9]+}/{month:[0-9]+}/{day:[0-9]+}', SearchController::class, 'searchByDay']
-                */
 			]
 		],
 		/**
