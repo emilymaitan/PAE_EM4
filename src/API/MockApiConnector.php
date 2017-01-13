@@ -27,6 +27,9 @@ class MockApiConnector implements iApiConnector {
      */
     private $parser;
 
+    /**
+     * @var string Mockup data file root, relative to this classes directory.
+     */
     private $fileAddress = __DIR__ . "/../../tests/resources/";
 
 
