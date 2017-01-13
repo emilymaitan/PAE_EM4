@@ -1,0 +1,45 @@
+{% extends "SearchController/search.twig" %}
+
+{% block searchTop %}
+<!-- advanced search -->
+
+
+    <form method="get" action="/search/advanced">
+        <div class="form-group row">
+            <div class="col-sm-6">
+                <input type="search" placeholder="Enter keywords for the title..." name="query" class="form-control">
+            </div>
+            <div class="col-sm-6">
+                <input type="text" id="datepicker" name="date" placeholder="Pick releasedate..." class="form-control"/>
+            </div>
+        </div> <!-- form group row keywords--date -->
+
+        <div class="form-group row"> <!-- novelty--popularity -->
+            <div class="col-sm-6">
+                <label for="slider-novelty">Filter by Novelty Index:
+                    [<span id="novLowVal">-</span>,<span id="novHiVal">-</span>]
+                </label>
+                <div id="slider-novelty"></div>
+            </div><!-- noveltyindex col-6 -->
+
+            <div class="col-sm-6">
+                <label for="slider-popularity">Filter by Popularity Index:
+                    [<span id="popLowVal">-</span>,<span id="popHiVal">-</span>]
+                </label>
+                <div id="slider-popularity"></div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+    </form>
+
+    <hr/>
+
+{% endblock %}
+
+{% block queryNull %}
+    <!-- The searchcontroller for /search/advanced accepts empty parameters. -->
+    <p class="text-muted">
+        Please note that filtering by novelty and popularity is not implemented.
+        It only exists because I had fun with bootstrap forms and wanted to check how it'd look. :)
+    </p>
+{% endblock %}

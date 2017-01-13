@@ -7,6 +7,7 @@
  */
 
 namespace emilymaitan\PAE_EM4\Controller;
+use GuzzleHttp\Psr7\Response;
 
 /**
  * This class handles all search requests, as well as the display of the advanced search page.
@@ -16,15 +17,39 @@ namespace emilymaitan\PAE_EM4\Controller;
 class SearchController extends AbstractController {
     /**
      * Display the plain search page, without any search params or results set.
-     * @return array
+     * @return mixed
      */
     public function search() {
         $queryParams = $this->getRequest()->getQueryParams();
         if ($queryParams == null) $query = ""; // if site /search is called without any params
-        else $query = $queryParams["query"]; // no htmlspecialchar decode because < might be valid input
+        else if ($queryParams["query"] !== null) $query = $queryParams["query"]; // no htmlspecialchar decode because < might be valid input;
+        else return $this->getResponseContainer()->getResponse()->withStatus(400,"Bad Request");
 
         // TODO api call to get $result
         $projects = $this->getApiConnector()->getProjectByQuery($query);
+
+        return [
+            'pagetitle' => 'Advanced Search',
+            'query' => $query,
+            'projects' => $projects
+        ];
+    }
+
+    /**
+     * Allows searching for Project and Date in one go. The other options are just deco.
+     * @return array
+     */
+    public function advancedSearch() {
+        $queryParams = $this->getRequest()->getQueryParams();
+        $projects = [];
+        $query = null;
+        $date = null;
+
+        if ($queryParams != null) {
+            if (isset($queryParams["query"]))
+            $query = $queryParams["query"];
+            $date = $queryParams["date"];
+        }
 
         return [
             'pagetitle' => 'Advanced Search',

@@ -1,12 +1,78 @@
 {% extends "base.twig" %}
 
+{% block customStylesheet %}
+    <!-- jquery UI for displaying datepicker -->
+    <link rel="stylesheet" href="/vendor/jquery-ui-custom/jquery-ui.css">
+{% endblock %}
+
+{% block customScript %}
+    <script src="/vendor/jquery-ui-custom/jquery-ui.js"></script>
+    <script src="/js/search.js"></script>
+{% endblock %}
+
 {% block content %}
     <div class="container">
-        Hello! Welcome at the search page! <br>
-        {% if query == null %}
-            Try to search for something!
-        {% else %}
-            You searched for: {{ query }}
-        {% endif %}
+
+        {% block searchTop %}{% endblock %}
+
+        {% if (query is null)  %}
+
+            {% block queryNull %} <!-- page called without params -->
+                <!-- The searchcontroller for /search auto-sets the query param to an empty string.
+                 This is for API retrieval reasons. -->
+                <div class="alert alert-danger" role="alert">
+                    <strong>What?</strong> I have no idea what went wrong.
+                    Move along~ there's nothing to see here!
+                </div>
+            {% endblock %}
+
+        {% else %} <!-- query is not null -->
+
+            {% if query == "" %}
+                <div class="alert alert-warning" role="alert">
+                    <strong>You searched for nothing. Kind of empty here, right? </strong>
+                    Looks like you're either trying to find a bug in my code
+                    or just looking for nothing at all. Either is fine for me. But there are so many
+                    cool projects out there just waiting to be found! Give it a try, would you?
+                </div>
+
+            {% elseif projects|length == 0 %}
+                <div class="alert alert-info" role="alert">
+                    <strong>Oops!</strong> Looks like your query "{{ query }}" did not match any results in our database.
+                    But hey, I'm sure there are many other awesome projects somewhere out there!
+                    Why not give it another try?
+                </div>
+            {% else %}
+                <div class="alert alert-success" role="alert">
+                    Showing {{ projects|length }} result(s) for "{{ query }}".
+                </div>
+
+                <!-- copypasta table from homepage :) -->
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Description</th>
+                        <th>Novelty Index</th>
+                        <th>Popularity Index</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for project in projects %}
+                        <tr class="row-link"
+                            data-href="/project/{{ project.id }}/{{ project.name|url_encode }}">
+                            <td>{{ project.getName() }}</td>
+                            <td>{{ project.getDescription() }}</td>
+                            <td>{{ project.getNoveltyIndex() }}</td>
+                            <td>{{ project.getPopularityIndex() }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            {% endif %} <!-- projects.length -->
+
+
+        {% endif %} <!-- query was not null -->
     </div>
 {% endblock %}
