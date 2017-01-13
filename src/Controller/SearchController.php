@@ -46,9 +46,15 @@ class SearchController extends AbstractController {
         $date = null;
 
         if ($queryParams != null) {
-            if (isset($queryParams["query"]))
-            $query = $queryParams["query"];
-            $date = $queryParams["date"];
+            $query = isset($queryParams["query"]) ? $queryParams["query"] : null;
+            $date = isset($queryParams["date"]) ? $queryParams["date"] : null;
+
+            $projects = $this->getApiConnector()->getProjectByParams(
+                array(
+                    "query" => $query,
+                    "date" => $date
+                )
+            );
         }
 
         return [
@@ -58,21 +64,32 @@ class SearchController extends AbstractController {
         ];
     }
 
-    // master for year, month and day; ymd only inherit from this
+    // master for year, month and day; ymd templates only inherit from this
     public function searchByDate() {
         //TODO set frontend variables
+        return [
+            'date' => "nodate",
+            'projects' => []
+        ];
     }
 
     public function searchByYear($year) {
-        //TODO api call
+        return [];
     }
 
-    public function searchByMonth() {
-        //TODO api call
+    public function searchByMonth($year, $month) {
+        return [];
     }
 
     public function searchByDay($year, $month, $day) {
-        //TODO api call
+        $date = new \DateTime();
+        $date->setDate($year,$month,$day);
+        $projects = $this->getApiConnector()->getProjectByDate($date->format('Y-m-d'));
+
+        return [
+            "date" => $date->format('Y/m/d'),
+            "projects" => $projects
+        ];
     }
 
 }
