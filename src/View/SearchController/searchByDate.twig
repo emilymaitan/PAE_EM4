@@ -1,0 +1,47 @@
+{% extends "base.twig" %}
+
+{% block customScript %}
+    <script src="/js/search.js"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% if projects|length == 0 %}
+            {% block noresults %}
+                <div class="alert alert-warning" role="alert">
+                    <strong>Sorry!</strong> Whatever you are looking for, it's not here.
+                </div>
+            {% endblock %}
+        {% else %}
+            <div class="alert alert-success" role="alert">
+                {% block results %}
+                    Showing {{ projects|length }} result(s) for the date "{{ date }}".
+                {% endblock %}
+            </div>
+
+            <!-- copypasta table from homepage :) -->
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Project Name</th>
+                    <th>Description</th>
+                    <th>Novelty Index</th>
+                    <th>Popularity Index</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for project in projects %}
+                    <tr class="row-link"
+                        data-href="/project/{{ project.id }}/{{ project.name|url_encode }}">
+                        <td>{{ project.getName() }}</td>
+                        <td>{{ project.getDescription() }}</td>
+                        <td>{{ project.getNoveltyIndex() }}</td>
+                        <td>{{ project.getPopularityIndex() }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        {% endif %}
+    </div>
+{% endblock %}

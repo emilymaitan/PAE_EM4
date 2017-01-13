@@ -1,0 +1,8 @@
+{% extends "SearchController/searchByDate.twig" %}
+
+{% block noresults %}
+    <div class="alert alert-warning" role="alert">
+        <strong>Sorry!</strong> Although the REST-like URL structure exists, searches by month
+        have not been implemented due to missing API functionality. Sorry about that!
+    </div>
+{% endblock %}

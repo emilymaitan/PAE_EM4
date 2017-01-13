@@ -1,0 +1,14 @@
+{% extends "SearchController/searchByDate.twig" %}
+
+{% block noresults %}
+    <div class="alert alert-info">
+        <strong>Oops!</strong> Looks there there are no projects for the date {{ date }}
+        to be found in our database. Maybe that was a quiet day, or maybe our database was down.
+        Anyway, there is nothing to see here!
+        But hey, I'm sure there are many other awesome projects somewhere out there! Keep on searching!
+    </div>
+{% endblock %}
+
+{% block results %}
+    Showing {{ projects|length }} result(s) for the date {{ date }}.
+{% endblock %}
