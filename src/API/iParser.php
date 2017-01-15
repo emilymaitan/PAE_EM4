@@ -20,4 +20,9 @@ interface iParser {
      * @return array Array of Projects on success, empty array else.
      */
     public function parse(string $input) : array;
+
+    /**
+     * @return string Which format the parser accepts.
+     */
+    public function getFormat() : string;
 }
