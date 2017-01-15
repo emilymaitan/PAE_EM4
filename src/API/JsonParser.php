@@ -20,6 +20,11 @@ use emilymaitan\PAE_EM4\Model\API\Project;
 class JsonParser implements iParser {
 
     /**
+     * @var string $FORMAT -- Which text format the parser accepts. Immutable.
+     */
+    public static $FORMAT = "json";
+
+    /**
      * {@inheritdoc}
      */
     public function parse(string $input): array {
@@ -41,5 +46,13 @@ class JsonParser implements iParser {
         }
 
         return $result;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getFormat(): string
+    {
+        return JsonParser::$FORMAT;
     }
 }
