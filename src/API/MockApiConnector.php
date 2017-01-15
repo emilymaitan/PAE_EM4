@@ -14,11 +14,10 @@ use emilymaitan\PAE_EM4\API\iParser;
 use emilymaitan\PAE_EM4\Model\API\Project;
 
 /**
- * MOCKUP!
- * Responsible for talking to the REST API. In the whole project's lifetime,
- * there is only one instance of this class to be created.
+ * MOCKUP! Danger: Only works with JSON-compatible parsers.
+ * Serves as a stand-in until our REST-Api goes live.
  * Class MockApiConnector
- * @package emilymaitan\PAE_EM4\tests
+ * @package emilymaitan\PAE_EM4\API
  */
 class MockApiConnector implements iApiConnector {
 
@@ -41,6 +40,16 @@ class MockApiConnector implements iApiConnector {
     public function __construct (iParser $parser) {
         $this->parser = $parser;
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function getStatus(): int
+    {
+        if (realpath($this->fileAddress) !== false) return 0;
+        return 503;
+    }
+
 
     /**
      * {@inheritDoc}
