@@ -13,6 +13,15 @@ use emilymaitan\PAE_EM4\Model\API\Project;
 
 interface iApiConnector {
     /**
+     * Checks the current API Status.
+     * @return int 0 if working correctly,
+     *             404 if no server could be reached (wrong URL),
+     *             500 on unknown server error,
+     *             503 if the server is down (overload, maintenance)
+     */
+    public function getStatus() : int;
+
+    /**
      * Retrieves a project via its unique ID.
      * @param int $id unique project identifier
      * @return Project Project object if ID was found, null else
