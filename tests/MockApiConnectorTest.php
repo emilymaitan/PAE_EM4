@@ -27,6 +27,10 @@ class MockApiConnectorTest extends TestCase
         $this->api = new MockApiConnector($this->parser);
     }
 
+    public function testStatus() {
+        $this->assertEquals(0,$this->api->getStatus());
+    }
+
     public function testGetById() {
         $expectedProject = new Project(1,"Thing","You know you need it.",50,80,"2016/12/11","http://example.com/thing");
         $this->assertEquals($expectedProject,$this->api->getProjectById(1));
