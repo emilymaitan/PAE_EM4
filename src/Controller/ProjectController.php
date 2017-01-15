@@ -30,7 +30,7 @@ class ProjectController extends AbstractController {
         $project = $this->getApiConnector()->getProjectById($id);
         // ToDo react if project is null
         if ($project == null) {
-            return $this->getResponseContainer()->getResponse()->withStatus(404,"ID not found");
+            throw new \Exception("ID not found",404);
         }
 
         return [
