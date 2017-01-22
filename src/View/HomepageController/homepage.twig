@@ -58,7 +58,7 @@
                     <tr class="row-link"
                         data-href="/project/{{ project.id }}/{{ project.name|url_encode }}">
                         <td>{{ project.getName() }}</td>
-                        <td>{{ project.getDescription() }}</td>
+                        <td>{{project.getDescription()|slice(0, 200) }}[...]</td>
                         <td>{{ project.getNoveltyIndex() }}</td>
                         <td>{{ project.getPopularityIndex() }}</td>
                     </tr>
