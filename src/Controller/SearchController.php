@@ -18,15 +18,16 @@ class SearchController extends AbstractController {
     /**
      * Display the plain search page, without any search params or results set.
      * @return mixed
+     * @throws \Exception Parameters could not be read from the request.
      */
     public function search() {
         $queryParams = $this->getRequest()->getQueryParams();
         if ($queryParams == null) $query = ""; // if site /search is called without any params
         else if ($queryParams["query"] !== null) $query = $queryParams["query"]; // no htmlspecialchar decode because < might be valid input;
-        else return $this->getResponseContainer()->getResponse()->withStatus(400,"Bad Request");
+        else throw new \Exception(400,"Bad Request");
 
         // TODO api call to get $result
-        $projects = $this->getApiConnector()->getProjectByQuery($query);
+        $projects = $this->getApiConnector()->getProjectByQuery(urlencode($query));
 
         return [
             'pagetitle' => 'Advanced Search',
