@@ -89,7 +89,7 @@ class RestApiConnector implements iApiConnector
     /**
      * {@inheritDoc}
      */
-    public function getProjectById(int $id): ?Project
+    public function getProjectById(int $id)
     {
         /**
          * @var array $result As ID is unique, the size is 1 at most.

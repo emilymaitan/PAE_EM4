@@ -54,7 +54,7 @@ class MockApiConnector implements iApiConnector {
     /**
      * {@inheritDoc}
      */
-    public function getProjectById(int $id): ?Project
+    public function getProjectById(int $id)
     {
         switch($id) {
             case 1: return $this->parser->parse(file_get_contents($this->fileAddress . "01_Thing.json", true))[0]; break;

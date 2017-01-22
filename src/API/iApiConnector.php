@@ -24,9 +24,9 @@ interface iApiConnector {
     /**
      * Retrieves a project via its unique ID.
      * @param int $id unique project identifier
-     * @return Project Project object if ID was found, null else
+     * @return mixed Project object if ID was found, null else
      */
-    public function getProjectById(int $id) : ?Project;
+    public function getProjectById(int $id);
 
     /**
      * Retrieves project(s) via a query-string. At least the project's name will be searched for.
