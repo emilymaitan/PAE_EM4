@@ -3,8 +3,8 @@
     "id_db": 0,
     "title": "Unknown",
     "description": "You're an URL-manipulator! ^^",
-    "noveltyIndex": 100,
-    "popularityIndex": 100,
+    "novelty": 100,
+    "popularity": 100,
     "entryDate": {
       "year": 2016,
       "month": 12,

@@ -3,8 +3,8 @@
     "id_db": 2,
     "title": "Cat Cookies",
     "description": "Heaven is bacon-flavored.",
-    "noveltyIndex": 60,
-    "popularityIndex": 45,
+    "novelty": 60,
+    "popularity": 45,
     "entryDate": {
       "year": 2016,
       "month": 12,

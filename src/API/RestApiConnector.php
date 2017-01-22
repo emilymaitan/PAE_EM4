@@ -10,6 +10,8 @@ namespace emilymaitan\PAE_EM4\API;
 
 
 use DateTime;
+use emilymaitan\PAE_EM4\API\iApiConnector;
+use emilymaitan\PAE_EM4\API\iParser;
 use emilymaitan\PAE_EM4\Model\API\Project;
 
 /**
@@ -24,7 +26,7 @@ class RestApiConnector implements iApiConnector
     /**
      * @var string URL to the REST-ful API.
      */
-    private static $API_URL = "http://em4.cs.univie.ac.at:8080";
+    private static $API_URL = "http://em4.cs.univie.ac.at:8080/PAE/";
 
     /**
      * @var array -- An array of options for sending HTTP requests to the API.
@@ -40,7 +42,7 @@ class RestApiConnector implements iApiConnector
      * RestApiConnector constructor featuring dependency injection :)
      * @param iParser $parser
      */
-    public function __construct($parser)
+    public function __construct(iParser $parser)
     {
         $this->parser = $parser;
         $this->opts = $this->setOpts($parser->getFormat());
@@ -73,15 +75,7 @@ class RestApiConnector implements iApiConnector
      */
     public function getStatus(): int
     {
-        // TODO check if this actually works as intended once the API is online
-        $conn = curl_init(RestApiConnector::$API_URL);
-        if ($conn === false) return 404;
 
-        curl_setopt($conn,CURLOPT_CONNECTTIMEOUT,2); // wait for 2 seconds
-        if (curl_exec($conn) === false) return 500;
-        if (curl_error($conn) === 28) return 503; // timeout
-
-        curl_close($conn);
         return 0;
     }
 
@@ -96,7 +90,7 @@ class RestApiConnector implements iApiConnector
          */
         $result = $this->parser->parse(
             file_get_contents(
-                RestApiConnector::$API_URL . $id . "?format=" . $this->parser->getFormat(),
+                RestApiConnector::$API_URL . "projects/" . $id . "?format=" . $this->parser->getFormat(),
                 false,
                 stream_context_create($this->opts)
             )
@@ -115,7 +109,7 @@ class RestApiConnector implements iApiConnector
     {
         return $this->parser->parse(
             file_get_contents(
-                RestApiConnector::$API_URL . "?query=" . $query . "&format=" . $this->parser->getFormat(),
+                RestApiConnector::$API_URL . "projects/" . "?query=" . $query . "&format=" . $this->parser->getFormat(),
                 false,
                 stream_context_create($this->opts)
             )
@@ -128,9 +122,10 @@ class RestApiConnector implements iApiConnector
     public function getProjectByDate(string $date): array
     {
         if (stripos($date,"/") !== false) $date = $this->parseInternalDateToApiCompliant($date);
+
         return $this->parser->parse(
           file_get_contents(
-              RestApiConnector::$API_URL . "?date=" . $date . "&format=" . $this->parser->getFormat(),
+              RestApiConnector::$API_URL . "projects/?date=" . $date . "&format=" . $this->parser->getFormat(),
               false,
               stream_context_create($this->opts)
           )

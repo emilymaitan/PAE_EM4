@@ -3,8 +3,8 @@
     "id_db": 1,
     "title": "Thing",
     "description": "You know you need it.",
-    "noveltyIndex": 50,
-    "popularityIndex": 80,
+    "novelty": 50,
+    "popularity": 80,
     "entryDate": {
       "year": 2016,
       "month": 12,
@@ -16,8 +16,8 @@
     "id_db": 2,
     "title": "Cat Cookies",
     "description": "Heaven is bacon-flavored.",
-    "noveltyIndex": 60,
-    "popularityIndex": 45,
+    "novelty": 60,
+    "popularity": 45,
     "entryDate": {
       "year": 2016,
       "month": 12,

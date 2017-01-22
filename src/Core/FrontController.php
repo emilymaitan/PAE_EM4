@@ -72,7 +72,10 @@ class FrontController {
 			} else if (is_array($controllerResponse)) {
 				// Controller responded with an array. Pass it to the view.
 				$loader = new Twig_Loader_Filesystem(__DIR__ . '/../View');
-				$twig = new Twig_Environment($loader, []);
+				/* TODO REMOVE DEBUG */
+				$twig = new Twig_Environment($loader, ['debug' => true]);
+				$twig->addExtension(new \Twig_Extension_Debug());
+				/* TODO WARNING - END OF MODIFIED CODE */
 				$templateName = preg_replace('/.*\\\\/', '', $routingResponse->getClass()) .
 					'/' . $routingResponse->getMethod() . '.twig';
 				$output = $twig->render($templateName, $controllerResponse);
