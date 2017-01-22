@@ -1,11 +1,15 @@
 [
   {
-    "id": 1,
-    "name": "Thing",
+    "id_db": 1,
+    "title": "Thing",
     "description": "You know you need it.",
     "noveltyIndex": 50,
     "popularityIndex": 80,
-    "date": "2016/12/11",
+    "entryDate": {
+      "year": 2016,
+      "month": 12,
+      "dayOfMonth": 11
+    },
     "link": "http://example.com/thing"
   }
 ]

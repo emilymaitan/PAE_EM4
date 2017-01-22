@@ -1,11 +1,15 @@
 [
   {
-    "id": 0,
-    "name": "Unknown",
+    "id_db": 0,
+    "title": "Unknown",
     "description": "You're an URL-manipulator! ^^",
     "noveltyIndex": 100,
     "popularityIndex": 100,
-    "date": "2016/12/16",
+    "entryDate": {
+      "year": 2016,
+      "month": 12,
+      "dayOfMonth": 16
+    },
     "link": "http://example.com/nope"
   }
 ]

@@ -1,11 +1,15 @@
 [
   {
-    "id": 2,
-    "name": "Cat Cookies",
+    "id_db": 2,
+    "title": "Cat Cookies",
     "description": "Heaven is bacon-flavored.",
     "noveltyIndex": 60,
     "popularityIndex": 45,
-    "date": "2016/12/11",
+    "entryDate": {
+      "year": 2016,
+      "month": 12,
+      "dayOfMonth": 11
+    },
     "link": "http://example.com/cat_cookies"
   }
 ]

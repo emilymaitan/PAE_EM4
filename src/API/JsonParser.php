@@ -33,14 +33,17 @@ class JsonParser implements iParser {
         if ($input == "") return $result;
 
         $temp_decode = json_decode($input, true);
+
         foreach ($temp_decode as $project) {
             array_push($result, new Project(
-                $project["id"],
-                $project["name"],
+                $project["id_db"],
+                $project["title"],
                 $project["description"],
                 $project["noveltyIndex"],
                 $project["popularityIndex"],
-                $project["date"],
+                $project["entryDate"]["year"] . "/" .
+                    $project["entryDate"]["month"] . "/" .
+                    $project["entryDate"]["dayOfMonth"],
                 $project["link"]
             ));
         }

@@ -79,7 +79,6 @@ class JsonParserTest extends TestCase {
 
         // call
         $projects = $parser->parse($input);
-
         // assert
         $this->assertEquals($expectedProjects,$projects);
     }
