@@ -1,5 +1,11 @@
 {% extends "base.twig" %}
 
+{% block customStylesheet %}
+    <!-- jquery UI for displaying datepicker -->
+    <link rel="stylesheet" href="/css/project.css">
+{% endblock %}
+
+
 {% block content %}
     <div class="container">
     <h1>{{ project.name }}</h1>
@@ -34,12 +40,17 @@
         <p><b>About this project.</b> {{ project.description }}</p>
 
         <div class="card">
-            <div class="card-block">
-                <h5 class="card-title">Placeholder for a Graph!</h5>
-                <h6 class="card-subtitle text-muted">What is this about?</h6>
-            </div>
-            <div class="card-block">
-                GRAPH GOES HERE
+            <a class="twitter" data-toggle="collapse" href="#tweets" aria-expanded="false" aria-controls="tweets">
+                <div class="card-header">
+                    <h5 class="card-title">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                        Trending on Twitter
+                    </h5>
+                    <h6 class="card-subtitle text-muted">View Tweets related to this project...</h6>
+                </div>
+            </a>
+            <div id="tweets" class="collapse card-block">
+                HERE BE TWEETS
             </div>
         </div>
 
