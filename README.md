@@ -9,7 +9,7 @@ This project is part of a larger University assignment. Its aim is it to provide
 - [x] put on github
 - [x] Homepage _(milestone 1)_
 - [x] Project Page _(milestone 2)_
-- [ ] API Integration _(milestone 3)_
+- [x] API Integration _(milestone 3)_
 
 
 ### Branch Structure
