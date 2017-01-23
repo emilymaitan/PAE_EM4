@@ -37,6 +37,7 @@ class JsonParser implements iParser {
         if (empty($temp_decode)) return $result;
 
         foreach ($temp_decode as $project) {
+
             array_push($result, new Project(
                 $project["id_db"],
                 $project["title"],
@@ -46,10 +47,10 @@ class JsonParser implements iParser {
                 $project["entryDate"]["year"] . "/" .
                     $project["entryDate"]["month"] . "/" .
                     $project["entryDate"]["dayOfMonth"],
-                $project["link"]
+                $project["link"],
+                $project["tweetsIDs"] === null ? array() : $project["tweetsIDs"]
             ));
         }
-
         return $result;
     }
 

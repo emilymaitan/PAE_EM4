@@ -50,7 +50,16 @@
                 </div>
             </a>
             <div id="tweets" class="collapse card-block">
-                HERE BE TWEETS
+                {% if tweets|length == 0 %}
+                    <div class="alert alert-info" role="alert">
+                        <strong>Sorry!</strong> Seems like there are no tweets for this project.
+                        This is your chance to be the first one to tweet about it!
+                    </div>
+                {% else %}
+                   {% for tweet in tweets %}
+                       {{ tweet.getHtml()|raw }}
+                   {% endfor %}
+                {% endif %}
             </div>
         </div>
 

@@ -10,6 +10,7 @@ namespace emilymaitan\PAE_EM4\API;
 
 
 use emilymaitan\PAE_EM4\Model\API\Project;
+use emilymaitan\PAE_EM4\Model\API\Twitter\Tweet;
 
 interface iApiConnector {
     /**
@@ -41,6 +42,12 @@ interface iApiConnector {
      * @return array key is project-id, value is project
      */
     public function getProjectByDate (string $date) : array;
+
+    /**
+     * @param int $id
+     * @return mixed
+     */
+    public function getTweetById (int $id) : Tweet;
 
     /**
      * Retrieves project(s) basing on a set of pre-defined parameters.

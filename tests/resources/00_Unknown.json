@@ -10,6 +10,7 @@
       "month": 12,
       "dayOfMonth": 16
     },
-    "link": "http://example.com/nope"
+    "link": "http://example.com/nope",
+    "tweetsIDs": []
   }
 ]

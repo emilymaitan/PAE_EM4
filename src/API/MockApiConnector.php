@@ -12,6 +12,7 @@ use DateTime;
 use emilymaitan\PAE_EM4\API\iApiConnector;
 use emilymaitan\PAE_EM4\API\iParser;
 use emilymaitan\PAE_EM4\Model\API\Project;
+use emilymaitan\PAE_EM4\Model\API\Twitter\Tweet;
 
 /**
  * MOCKUP! Danger: Only works with JSON-compatible parsers.
@@ -95,6 +96,15 @@ class MockApiConnector implements iApiConnector {
     private function parseDate(string $date) : string {
         return DateTime::createFromFormat('Y-m-d', $date)->format('Y/m/d');
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function getTweetById(int $id) : Tweet
+    {
+        // TODO: Implement getTweetById() method.
+    }
+
 
     /**
      * Retrieves project(s) basing on a set of pre-defined parameters. Always empty because this is a mockup.

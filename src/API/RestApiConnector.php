@@ -12,7 +12,9 @@ namespace emilymaitan\PAE_EM4\API;
 use DateTime;
 use emilymaitan\PAE_EM4\API\iApiConnector;
 use emilymaitan\PAE_EM4\API\iParser;
+use emilymaitan\PAE_EM4\API\Twitter\iTwitterParser;
 use emilymaitan\PAE_EM4\Model\API\Project;
+use emilymaitan\PAE_EM4\Model\API\Twitter\Tweet;
 
 /**
  * Retrieves API data over the network, parses and returns them.
@@ -39,12 +41,19 @@ class RestApiConnector implements iApiConnector
     private $parser;
 
     /**
+     * @var iTwitterParser -- Parses /tweet API responses into Tweet objects. Immutable.
+     */
+    private $twitterParser;
+
+    /**
      * RestApiConnector constructor featuring dependency injection :)
      * @param iParser $parser
+     * @param iTwitterParser $twitterParser
      */
-    public function __construct(iParser $parser)
+    public function __construct(iParser $parser, iTwitterParser $twitterParser)
     {
         $this->parser = $parser;
+        $this->twitterParser = $twitterParser;
         $this->opts = $this->setOpts($parser->getFormat());
     }
 
@@ -75,7 +84,6 @@ class RestApiConnector implements iApiConnector
      */
     public function getStatus(): int
     {
-
         return 0;
     }
 
@@ -131,6 +139,21 @@ class RestApiConnector implements iApiConnector
           )
         );
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function getTweetById(int $id) : Tweet
+    {
+        return $this->twitterParser->parseTweet(
+          file_get_contents(
+              RestApiConnector::$API_URL . "tweets/" . $id,
+              false,
+              stream_context_create($this->opts)
+          )
+        );
+    }
+
 
     /**
      * {@inheritDoc}

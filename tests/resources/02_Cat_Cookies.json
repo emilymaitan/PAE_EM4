@@ -10,6 +10,7 @@
       "month": 12,
       "dayOfMonth": 11
     },
-    "link": "http://example.com/cat_cookies"
+    "link": "http://example.com/cat_cookies",
+    "tweetsIDs": [2,3]
   }
 ]

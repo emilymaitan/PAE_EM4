@@ -91,6 +91,9 @@ class FrontController {
 		try {
 			$callController($routingResponse);
 		} catch (\Exception $e) {
+
+		    var_dump($e->getMessage());
+
 			if ($e->getCode() == 404) {
 				try {
 					$callController($router->getNotFoundRoute());

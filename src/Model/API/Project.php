@@ -45,14 +45,22 @@ class Project
     protected $link;
 
     /**
+     * @var array $tweets
+     */
+    protected $tweets;
+
+    /**
      * Project constructor.
      * @param integer $id -- Unique identifier for any given project.
      * @param string $name -- The full title of the project.
      * @param string $description -- A short text describing the project.
      * @param float $noveltyIndex -- numeral value between 0 and 100 denoting the novelty of the project
      * @param float $popularityIndex -- numeral value between 0 and 100 denoting the popularity of the project
+     * @param string $date -- Date when the project was published in its indie database.
+     * @param string $link -- URL to the indie database page of the project.
+     * @param array $tweets -- Array of IDs of tweets for this project. Can be empty.
      */
-    function __construct($id, $name, $description, $noveltyIndex, $popularityIndex, $date, $link) {
+    function __construct($id, $name, $description, $noveltyIndex, $popularityIndex, $date, $link, $tweets) {
         $this->id = $id;
         $this->name = $name;
         $this->description = $description;
@@ -60,6 +68,7 @@ class Project
         $this->popularityIndex = $popularityIndex;
         $this->date = $date;
         $this->link = $link;
+        $this->tweets = $tweets;
     }
 
     /**
@@ -175,6 +184,14 @@ class Project
     }
 
     /**
+     * @return array
+     */
+    public function getTweets(): array
+    {
+        return $this->tweets;
+    }
+
+    /**
      * @return string A string listing all class variables and their current values.
      */
     public function __toString(): string
@@ -185,6 +202,7 @@ class Project
             "\nPopularity: " . $this->popularityIndex .
             "\nNovelty: " . $this->noveltyIndex .
             "\nPublished: " . $this->date .
-            "\nLink: " . $this->link;
+            "\nLink: " . $this->link .
+            "\nNo. Tweets: " . sizeof($this->tweets);
     }
 }

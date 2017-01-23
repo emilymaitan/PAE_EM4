@@ -10,7 +10,8 @@
       "month": 12,
       "dayOfMonth": 11
     },
-    "link": "http://example.com/thing"
+    "link": "http://example.com/thing",
+    "tweetsIDs": [1]
   },
   {
     "id_db": 2,
@@ -23,6 +24,7 @@
       "month": 12,
       "dayOfMonth": 11
     },
-    "link": "http://example.com/cat_cookies"
+    "link": "http://example.com/cat_cookies",
+    "tweetsIDs": [2,3]
   }
 ]
