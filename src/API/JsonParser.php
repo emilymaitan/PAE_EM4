@@ -38,7 +38,8 @@ class JsonParser implements iParser {
 
         foreach ($temp_decode as $project) {
 
-            array_push($result, new Project(
+            // TODO remove dirty error suppression fix once API is fixed
+            @array_push($result, new Project(
                 $project["id_db"],
                 $project["title"],
                 $project["description"],

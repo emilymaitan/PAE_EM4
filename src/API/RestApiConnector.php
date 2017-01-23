@@ -161,5 +161,6 @@ class RestApiConnector implements iApiConnector
     public function getProjectByParams(array $params): array
     {
         // TODO: Implement getProjectByParams() method.
+        throw new \Exception("not implemented",400);
     }
 }

@@ -92,6 +92,7 @@ class FrontController {
 			$callController($routingResponse);
 		} catch (\Exception $e) {
 
+		    // TODO remove this thing
 		    var_dump($e->getMessage());
 
 			if ($e->getCode() == 404) {

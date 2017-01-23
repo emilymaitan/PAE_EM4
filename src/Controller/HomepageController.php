@@ -22,8 +22,9 @@ class HomepageController extends AbstractController {
             default: $stats_api_status = "UNKNOWN";
         }
 
-        // TODO set date to today (for now keep old ones so that we have sth to display)
-        $projects_today = $this->getApiConnector()->getProjectByDate("2016/12/11");
+        $projects_today = $this->getApiConnector()->getProjectByDate(
+            (new \DateTime())->format("Y-m-d")
+        );
 
         return [
             'pagetitle' => "CFM | Homepage",
