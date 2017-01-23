@@ -11,7 +11,8 @@
       "dayOfMonth": 11
     },
     "link": "http://example.com/thing",
-    "tweetsIDs": [1]
+    "tweetsIDs": [1],
+    "searchHits": 210
   },
   {
     "id_db": 2,
@@ -25,6 +26,7 @@
       "dayOfMonth": 11
     },
     "link": "http://example.com/cat_cookies",
-    "tweetsIDs": [2,3]
+    "tweetsIDs": [2,3],
+    "searchHits": 613
   }
 ]

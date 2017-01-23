@@ -42,18 +42,19 @@ class SearchController extends AbstractController {
     public function advancedSearch() {
         $queryParams = $this->getRequest()->getQueryParams();
         $projects = [];
-        $query = null;
+        $query = implode(" , ",$queryParams);
         $date = null;
 
+        $params = [];
+
         if ($queryParams != null) {
-            $query = isset($queryParams["query"]) ? $queryParams["query"] : null;
-            $date = isset($queryParams["date"]) ? $queryParams["date"] : null;
+            if (!empty($queryParams["query"]) and !is_null($queryParams["query"]) ) $params["query"] = $queryParams["query"];
+            if (!empty($queryParams["date"]) and !is_null($queryParams["date"])) $params["date"] = $queryParams["date"];
+            if (!empty($queryParams["nov"]) and !is_null($queryParams["nov"])) $params["nov"] = $queryParams["nov"];
+            if (!empty($queryParams["pop"])and !is_null($queryParams["pop"]) ) $params["pop"] = $queryParams["pop"];
 
             $projects = $this->getApiConnector()->getProjectByParams(
-                array(
-                    "query" => $query,
-                    "date" => $date
-                )
+                $params
             );
         }
 

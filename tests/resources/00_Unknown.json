@@ -11,6 +11,7 @@
       "dayOfMonth": 16
     },
     "link": "http://example.com/nope",
-    "tweetsIDs": []
+    "tweetsIDs": [],
+    "searchHits": 0
   }
 ]

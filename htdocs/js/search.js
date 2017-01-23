@@ -16,6 +16,7 @@ $ (document).ready(function(){
         slide: function( event, ui ) {
             $("#popLowVal").html(ui.values[0]);
             $("#popHiVal").html(ui.values[1]);
+            $("#popInput").val(ui.values[0] + "-" + ui.values[1]);
         }
     });
 
@@ -27,6 +28,7 @@ $ (document).ready(function(){
         slide: function( event, ui ) {
             $("#novLowVal").html(ui.values[0]);
             $("#novHiVal").html(ui.values[1]);
+            $("#novInput").val(ui.values[0] + "-" + ui.values[1]);
         }
     });
 

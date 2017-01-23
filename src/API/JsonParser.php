@@ -49,7 +49,8 @@ class JsonParser implements iParser {
                     $project["entryDate"]["month"] . "/" .
                     $project["entryDate"]["dayOfMonth"],
                 $project["link"],
-                $project["tweetsIDs"] === null ? array() : $project["tweetsIDs"]
+                $project["tweetsIDs"],
+                $project["searchHits"]
             ));
         }
         return $result;

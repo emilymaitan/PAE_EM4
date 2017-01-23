@@ -19,10 +19,10 @@ class TwitterParser implements iTwitterParser
         if ($tweet == "" or is_null($tweet)) throw new \Exception("Unparsable Tweet!");
         $temp_decode = json_decode($tweet, true);
         return new Tweet(
-            $temp_decode["twitterID"],
-            $temp_decode["link"],
-            $temp_decode["retweetCount"],
-            $temp_decode["retweeted"]
+            $temp_decode[0]["twitterID"],
+            $temp_decode[0]["link"],
+            $temp_decode[0]["retweetCount"],
+            $temp_decode[0]["retweeted"]
         );
     }
 

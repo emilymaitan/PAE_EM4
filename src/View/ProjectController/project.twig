@@ -27,6 +27,7 @@
                     Popularity Index: {{ project.popularityIndex }}%
                 </div>
                 <progress class="progress progress-striped progress-success"
+                          title="Number of hits in search engines: {{ project.searchHits }}"
                           value="{{ project.popularityIndex }}" max="100"
                           aria-describedby="popularityCaption" aria-valuemin="0" aria-valuemax="100"
                           aria-valuenow="{{ project.popularityIndex }}">

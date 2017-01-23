@@ -61,15 +61,7 @@ class ProjectController extends AbstractController {
 
         foreach ($project->getTweets() as $tweetId) {
             array_push($tweets, $this->twitterConnector->getEmbeddableTweet(
-            //$this->getApiConnector()->getTweetById($tweetId)
-                new Tweet(
-                    0,
-                    "https://twitter.com/Interior/status/507185938620219395",
-                    0,
-                    0
-                )
-            ))
-           ;
+                $this->getApiConnector()->getTweetById($tweetId)));
         }
 
         return [

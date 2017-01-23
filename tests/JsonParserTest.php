@@ -54,7 +54,7 @@ class JsonParserTest extends TestCase {
     public function testParse01() {
         // setup
         $parser = new JsonParser();
-        $expectedProject = new Project(1,"Thing","You know you need it.",50,80,"2016/12/11","http://example.com/thing",array(1));
+        $expectedProject = new Project(1,"Thing","You know you need it.",50,80,"2016/12/11","http://example.com/thing",array(1),210);
         $input = file_get_contents("resources/01_Thing.json", true);
 
         // call
@@ -72,8 +72,8 @@ class JsonParserTest extends TestCase {
         // setup
         $parser = new JsonParser();
         $expectedProjects = array(
-            $expectedProject = new Project(1,"Thing","You know you need it.",50,80,"2016/12/11","http://example.com/thing",array(1)),
-            new Project(2, "Cat Cookies", "Heaven is bacon-flavored.",60,45,"2016/12/11","http://example.com/cat_cookies",array(2,3))
+            $expectedProject = new Project(1,"Thing","You know you need it.",50,80,"2016/12/11","http://example.com/thing",array(1),210),
+            new Project(2, "Cat Cookies", "Heaven is bacon-flavored.",60,45,"2016/12/11","http://example.com/cat_cookies",array(2,3),613)
         );
         $input = file_get_contents("resources/allProjects.json", true);
 

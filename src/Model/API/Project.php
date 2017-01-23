@@ -48,6 +48,10 @@ class Project
      * @var array $tweets
      */
     protected $tweets;
+    /**
+     * @var integer $searchHits -- Number of hits in search engines for this project.
+     */
+    protected $searchHits;
 
     /**
      * Project constructor.
@@ -60,7 +64,7 @@ class Project
      * @param string $link -- URL to the indie database page of the project.
      * @param array $tweets -- Array of IDs of tweets for this project. Can be empty.
      */
-    function __construct($id, $name, $description, $noveltyIndex, $popularityIndex, $date, $link, $tweets) {
+    function __construct($id, $name, $description, $noveltyIndex, $popularityIndex, $date, $link, $tweets, $searchHits) {
         $this->id = $id;
         $this->name = $name;
         $this->description = $description;
@@ -69,6 +73,7 @@ class Project
         $this->date = $date;
         $this->link = $link;
         $this->tweets = $tweets;
+        $this->searchHits = $searchHits;
     }
 
     /**
@@ -192,6 +197,14 @@ class Project
     }
 
     /**
+     * @return int
+     */
+    public function getSearchHits(): int
+    {
+        return $this->searchHits;
+    }
+
+    /**
      * @return string A string listing all class variables and their current values.
      */
     public function __toString(): string
@@ -203,6 +216,7 @@ class Project
             "\nNovelty: " . $this->noveltyIndex .
             "\nPublished: " . $this->date .
             "\nLink: " . $this->link .
-            "\nNo. Tweets: " . sizeof($this->tweets);
+            "\nNo. Tweets: " . sizeof($this->tweets) .
+            "\nSearch Hits: " . $this->searchHits;
     }
 }

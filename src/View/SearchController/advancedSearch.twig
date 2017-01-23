@@ -18,6 +18,7 @@
             <div class="col-sm-6">
                 <label for="slider-novelty">Filter by Novelty Index:
                     [<span id="novLowVal">-</span>,<span id="novHiVal">-</span>]
+                    <input id="novInput" type="hidden" name="nov" value="" />
                 </label>
                 <div id="slider-novelty"></div>
             </div><!-- noveltyindex col-6 -->
@@ -25,6 +26,7 @@
             <div class="col-sm-6">
                 <label for="slider-popularity">Filter by Popularity Index:
                     [<span id="popLowVal">-</span>,<span id="popHiVal">-</span>]
+                    <input id="popInput" type="hidden" name="pop" value="" />
                 </label>
                 <div id="slider-popularity"></div>
             </div>
@@ -43,3 +45,4 @@
         It only exists because I had fun with bootstrap forms and wanted to check how it'd look. :)
     </p>
 {% endblock %}
+

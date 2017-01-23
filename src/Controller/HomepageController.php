@@ -11,7 +11,7 @@ class HomepageController extends AbstractController {
      */
     public function homepage() {
         // mock-ups for data you usually get via the API
-        $stats_db_entries = 0;
+        $stats_db_entries = 53;
         $stats_db_lastUpdated = new \DateTime();
 
         switch($this->getApiConnector()->getStatus()) {

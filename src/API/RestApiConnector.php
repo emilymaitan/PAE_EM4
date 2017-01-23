@@ -161,6 +161,20 @@ class RestApiConnector implements iApiConnector
     public function getProjectByParams(array $params): array
     {
         // TODO: Implement getProjectByParams() method.
-        throw new \Exception("not implemented",400);
+        //throw new \Exception("not implemented",400);
+        $uriParams = "";
+
+        if (isset($params["query"])) $uriParams = $uriParams . "query=" . $params["query"] . "&";
+        if (isset($params["date"])) $uriParams = $uriParams . "date=" . $params["date"] . "&";
+        if (isset($params["nov"])) $uriParams = $uriParams . "nov=" . $params["nov"] . "&";
+        if (isset($params["pop"])) $uriParams = $uriParams . "pop=" . $params["pop"];
+
+        return $this->parser->parse(
+            file_get_contents(
+                RestApiConnector::$API_URL . "projects/?" . $uriParams,
+                false,
+                stream_context_create($this->opts)
+            )
+        );
     }
 }
