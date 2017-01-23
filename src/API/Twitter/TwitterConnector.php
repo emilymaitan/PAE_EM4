@@ -36,7 +36,6 @@ class TwitterConnector implements iTwitterConnector
      */
     public function getEmbeddableTweet($tweet): EmbeddableTweet
     {
-        // TODO: Implement getEmbeddableTweet() method.
         return $this->parser->parseEmbeddableTweet(
             $tweet,
             file_get_contents(
