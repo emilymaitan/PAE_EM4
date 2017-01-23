@@ -74,7 +74,7 @@ class ProjectController extends AbstractController {
         }
 
         return [
-            'pagetitle' => $name,
+            'pagetitle' => $project->getName(),
             'project' => $project,
             'tweets' => $tweets
         ];
