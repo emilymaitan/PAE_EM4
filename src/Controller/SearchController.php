@@ -26,7 +26,6 @@ class SearchController extends AbstractController {
         else if ($queryParams["query"] !== null) $query = $queryParams["query"]; // no htmlspecialchar decode because < might be valid input;
         else throw new \Exception(400,"Bad Request");
 
-        // TODO api call to get $result
         $projects = $this->getApiConnector()->getProjectByQuery(urlencode($query));
 
         return [
@@ -67,7 +66,6 @@ class SearchController extends AbstractController {
 
     // master for year, month and day; ymd templates only inherit from this
     public function searchByDate() {
-        //TODO set frontend variables
         return [
             'date' => "nodate",
             'projects' => []
